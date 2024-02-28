@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "YouTube Timestamp Saver",
+  "version": "1.0",
+  "description": "Saves current timestamp of a video into the url every 5s",
+  "permissions": [
+    "tabs",
+    "webNavigation",
+    "https://*.youtube.com/"
+  ],
+  "icons": {
+    "48": "icon.png"
+  },
+  "background": {
+    "scripts": ["index.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
